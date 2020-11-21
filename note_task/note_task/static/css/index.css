@@ -1,0 +1,93 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.task__bar {
+    width: 20%;
+}
+
+.main__task {
+    width: 40%;
+}
+
+.profile__section {
+    width: 40%;
+}
+
+
+.tasker__welcome {
+    color: #9e9ea7;
+    font-size: 19px;
+}
+
+.task__specification {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.task__insearch {
+    margin-top: 25px;
+    font-size: 17px;
+    color: #9e9ea7;
+    border: none;
+    outline: none;
+    padding: 12px;
+    border-radius: 5px;
+    padding-right: 30%;
+    background: #e7e7e9;
+}
+
+
+
+.my__tasks {
+    margin-top: 30px;
+}
+
+.my__task__head {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+
+/* timeline */
+.task__timeline {
+    display: flex;
+    flex-direction: row;
+    padding-right: 12px;
+    margin-top: 12px;
+    color: #8a8a91;
+}
+
+.ttask {
+    margin: 5px;
+}
+
+
+/* task list */
+
+.index__task, .index__task2 {
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 70%;
+    padding-bottom: 80px;
+}
+
+.index__task2 {
+    background-color: #000000;
+    color: white;
+    margin-top: 20px;
+}
+
+
