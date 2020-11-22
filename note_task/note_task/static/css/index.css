@@ -90,4 +90,59 @@ body {
     margin-top: 20px;
 }
 
+.main__addtask {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.left_panel__addtask {
+    width: 35%;
+}
+
+.main_addtask__section {
+    margin-top: 4%;
+    
+}
+
+.addtask__head {
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.task__addname,.task__adddate, .task__addtime {
+    margin-top: 20px;
+    color: #9e9ea7;
+}
+
+.add__taskname, .add__tasktime, .add__taskdate {
+    margin-top: 15px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.final__addtasks {
+    margin-top: 30%;
+    text-align: center;
+}
+
+.button__addtask {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: rgb(126, 1, 175);
+    color: white;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+}
+
 
