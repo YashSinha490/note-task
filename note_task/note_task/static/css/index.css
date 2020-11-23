@@ -102,10 +102,11 @@ body {
 
 .main_addtask__section {
     margin-top: 4%;
-    
+
 }
 
 .addtask__head {
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 20px;
     letter-spacing: 4px;
     font-weight: 700;
@@ -144,5 +145,3 @@ body {
     color: white;
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
 }
-
-

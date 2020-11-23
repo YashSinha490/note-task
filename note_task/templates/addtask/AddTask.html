@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>NotTask</title>
+</head>
+<body>
+    <div class="main__addtask">
+        <div class="left_panel__addtask">
+            left Panel
+        </div>
+
+        <div class="main_addtask__section">
+          <div class="addtask__head"> Create
+              <br /> New Task
+          </div>
+          <br/>
+            <form class = "Task Name" action = "" method = "post" enctype = "multipart/form-data">
+              {% csrf_token %}
+              {% for fields in form %}
+              <label class = 'task__addname'> {{fields.label_tag}} </label>
+              <br/>
+              {{fields}}
+              <br style = "line-height:100;"></br>
+              {% endfor %}
+              <br style = “line-height:100;”><br>
+          <div class="final__addtasks">
+          <button class = "button__addtask">AddTask</button>
+        </div>
+          </form>
+        </div>
+
+
+    </div>
+</body>
+</html>
