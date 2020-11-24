@@ -2,6 +2,7 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: 'Dosis', sans-serif;
+    overflow: hidden;
 }
 
 .main {
@@ -9,6 +10,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    position: relative;
 }
 
 .task__bar {
@@ -252,3 +254,280 @@ div.task__list::-webkit-scrollbar {
 }
 
 
+.add__task__hover {
+    background-color: rgba(255, 255, 255, 0.925);
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    margin-left: -103%;
+    margin-top: 20px;
+    z-index: 20;
+}
+
+
+.add_task__buttons {
+    background-color: #4c00fc;
+    color: white;
+    display: inline;
+    padding: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 17px;
+    
+}
+
+.add_task__buttons:hover {
+    cursor: pointer;
+}
+
+
+.container {
+    right: -350px;
+    top: 80px;
+    position: absolute;
+    height: 70vh;
+    width: 280px;
+    border-radius: 18px;
+    background-color: #FFE4D4;
+    text-align: center;
+    box-shadow: rgba(2, 12, 27, 0.7) 15px 20px 40px -15px;
+    transition: 1s all ease-in-out;
+}
+
+.upper__container {
+    height: 22vh;
+}
+
+.below__container {
+    background-color: white;
+    border-radius: 12px;
+    height: 50vh;
+}
+
+.add__task {
+    font-family: 'Roboto', sans-serif;
+    line-height: 30px;
+    font-size: 22px;
+    color: rgb(71, 67, 67);
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.backwards {
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.backwards:hover {
+    cursor: pointer;
+}
+
+
+
+.task__name {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4d4b49af;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;
+}
+
+.task__name_input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(78, 71, 71);
+    padding-top: 10px;
+    padding-bottom: 4px;
+    background-color: #FFE4D4;
+    margin-right: 58px;
+    font-size: 14px;
+    font-weight: 500;
+    color: gray;
+}
+
+
+
+.date__name {
+    padding-top: 10px;
+}
+
+
+.add__notesa {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #4d4b49af;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;   
+    padding-top: 20px;
+}
+
+
+.notes__input {
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(129, 125, 125, 0.425);
+    padding-top: 4px;
+    padding-right: 40px;
+    padding-bottom: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+    color: gray;
+    font-size: 14px;
+}
+
+
+
+.write__name, .date__name, .time__name, .notes__dataa {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #4d4b49af;
+    font-family: 'Roboto', sans-serif;
+}
+
+.time__name {
+    padding-top: 20px;
+}
+
+.date__input, .time__input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(129, 125, 125, 0.425);
+    padding-top: 4px;
+    padding-right: 40px;
+    padding-bottom: 4px;
+    margin-left: 21px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+    color: gray;
+    font-size: 14px;
+}
+
+.date__data, .time__data {
+    display: flex;  
+} 
+
+.date__logo, .clock__icon {
+    font-size: 10px;
+    color: rgba(35, 35, 73, 0.548);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(129, 125, 125, 0.425);
+}
+
+.get__task {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(78, 71, 71);
+    padding-top: 10px;
+    padding-bottom: 4px;
+    background-color: #FFE4D4;
+    margin-right: 43px;
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+}
+
+
+.category {
+    margin-top: -150px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    
+}
+
+.cat__title {
+    font-size: 14px;
+    text-align: left;
+    padding-left: 24px;
+    padding-bottom: 10px;
+    color:rgba(77, 76, 76, 0.61);
+}
+
+.study {
+    background-color: #FDDAEA;
+    display: inline-block;
+    color: #fa72af;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.prod {
+    background-color: #F6D9DD;
+    display: inline-block;
+    color: #D8596C;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.life {
+    background-color: #D9DCEA;
+    display: inline-block;
+    color: #425195;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.button__add {
+    background-color: #425195;
+    display: inline-block;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    border-radius: 10px;
+    margin-top: 25px;
+    cursor: pointer;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+}
+
+.plus__sign {
+    color: white;
+    background-color: #d9dcea2f;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: start;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    padding-top: 2px;
+    margin-left: -110px;
+    font-weight: 600;
+}
+
+.add__title {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 13px;
+    font-weight: 550;
+    margin-top: -17px;
+    padding-left: 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+}
