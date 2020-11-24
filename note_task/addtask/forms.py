@@ -4,10 +4,11 @@ from addtask.models import AddTask
 class AddTaskForm(forms.ModelForm):
     class Meta:
         model = AddTask
-        fields = ('taskName', 'date', 'time')
+        fields = ('taskName', 'body', 'date', 'time')
 
         widgets = {
             'taskName': forms.TextInput(attrs={'class' : 'add__taskname', 'placeholder' : "Task Name"}),
+            'body': forms.Textarea(attrs={'class' : 'add__taskname', 'placeholder' : "Write your task here"}),
             'date': forms.TextInput(attrs={'placeholder' : "Add Date", 'class' : "add__taskdate"}),
             'time': forms.TextInput(attrs={'placeholder' : "Add Time", 'class' : "add__tasktime"}),
         }

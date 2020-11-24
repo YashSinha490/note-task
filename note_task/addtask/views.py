@@ -7,5 +7,6 @@ def addtask(request):
         if form.is_valid():
             form.save()
             return redirect('/addtask/')
-    form = forms.AddTaskForm()
-    return render(request, 'addtask/AddTask.html', {'form': form})
+    else:
+        form = forms.AddTaskForm()
+        return render(request, 'addtask/AddTask.html', {'form': form})

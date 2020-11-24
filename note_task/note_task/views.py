@@ -1,8 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from addtask.models import AddTask
 
 def homepage(request):
-    return render(request, 'homepage.html')
-
-def addtask(request):
-    return render(request, 'AddTask.html')
+    alltasks = AddTask.objects
+    return render(request, 'homepage.html', {'tasks':alltasks})

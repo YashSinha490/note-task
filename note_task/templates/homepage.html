@@ -47,31 +47,16 @@
                 </div>
 
                 <div class="task__list">
-                    
+
+              {% for task in tasks.all %}
                     <div class="index__task">
-                        <h3 class="task__name"> Task Name </h3>
-                        <div class="task__description">Make a Landing Page and MObile App</div>
-                        <div className="Reminder Button">
-                            Reminder button
-                        </div>
+                        <h3 class="task__name"> {{task.taskName}} </h3>
+                        <div class="task__description">{{task.body}}</div>
+                        {{task.date}} <br/>
+                        {{task.time}}
+                        <button type="button" name="button">Remind Me</button>
                     </div>
-
-
-                    <div class="index__task2">
-                        <h3 class="task__name"> Task Name 2 </h3>
-                        <div class="task__description">Make a Landing Page and MObile App</div>
-                        <div className="Reminder Button">
-                            Reminder button
-                        </div>
-                    </div>
-
-                    <div class="index__task2">
-                        <h3 class="task__name"> Task Name 2 </h3>
-                        <div class="task__description">Make a Landing Page and MObile App</div>
-                        <div className="Reminder Button">
-                            Reminder button
-                        </div>
-                    </div>
+              {% endfor %}
                 </div>
             </div>
         </div>
@@ -85,7 +70,7 @@
                 <div class="user__name">Deepak Singh</div>
                 <div class="user__designation">Programmer</div>
             </div>
-            <a href ="{% url 'addtask' %}">Add Tasks</a> 
+            <a href ="{% url 'addtask' %}">Add Tasks</a>
         </div>
     </div>
 </body>
