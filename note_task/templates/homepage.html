@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
     <title>NotTask</title>
 </head>
 <body>
     <div class="main">
-        <div class="task__bar">Taskbar</div>
+        <div class="task__bar">
+
+            <div class="task__bar_dashboard">Dashboard</div>
+            <div class="analytics">Analytics</div>
+            <div class="teams">Team</div>
+            <div class="documents">Document</div>
+            <div class="setting">Setting</div>
+        </div>
 
         <!-- Main Task Panel -->
         <div class="main__task">
@@ -36,6 +47,7 @@
                 </div>
 
                 <div class="task__list">
+                    
                     <div class="index__task">
                         <h3 class="task__name"> Task Name </h3>
                         <div class="task__description">Make a Landing Page and MObile App</div>
@@ -52,12 +64,27 @@
                             Reminder button
                         </div>
                     </div>
+
+                    <div class="index__task2">
+                        <h3 class="task__name"> Task Name 2 </h3>
+                        <div class="task__description">Make a Landing Page and MObile App</div>
+                        <div className="Reminder Button">
+                            Reminder button
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Profile Section -->
-        <div class="profile__section">Profile Scs
+        <div class="profile__section">
+            <div class="user__profile">
+                <div class="user__Image">
+                    <img class="image__profile" src="https://instagram.fknu1-1.fna.fbcdn.net/v/t51.2885-19/s320x320/49858772_370951917023136_3559444689042014208_n.jpg?_nc_ht=instagram.fknu1-1.fna.fbcdn.net&_nc_ohc=zNW3iQFOvO4AX98zesa&tp=1&oh=a50c3ace215e958290400b3d98e7900f&oe=5FE78804"/>
+                </div>
+                <div class="user__name">Deepak Singh</div>
+                <div class="user__designation">Programmer</div>
+            </div>
             <a href ="{% url 'addtask' %}">Add Tasks</a> 
         </div>
     </div>
