@@ -51,9 +51,9 @@
               {% for task in tasks.all %}
                     <div class="index__task">
                         <h3 class="task__name"> {{task.taskName}} </h3>
-                        <div class="task__description">{{task.body}}</div>
-                        {{task.date}} <br/>
-                        {{task.time}}
+                        <div class="task__description">{{task.date}}</div>
+                        {{task.time}} <br/>
+                        {{task.notes}}
                         <button type="button" name="button">Remind Me</button>
                     </div>
               {% endfor %}
@@ -70,12 +70,12 @@
                 <div class="user__name">Deepak Singh</div>
                 <div class="user__designation">Programmer</div>
             </div>
-            <!-- <a href ="{% url 'addtask' %}">Add Tasks</a> -->
+
             <div class="add_task__buttons" onclick="myfunc()">Add Task</div>
         </div>
 
 
-        
+
 
 
 
@@ -91,9 +91,10 @@
 
         <!-- Add tas kfunctonality -->
         <div class="add__task__hove">
-            <form class="container" id="ccnt">
+            <form class="container" id="ccnt" method = 'post'>
+              {% csrf_token %}
                 <div class="upper__container">
-                
+
                     <div class="backwards" onclick="goback()">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                         width="30" height="30"
@@ -104,44 +105,44 @@
                     <!-- task name is added here -->
 
                     <div class="add__task">Add Task</div>
-                    
-                    <div class="task__name">Name</div>
-                        
-                    <input type="text" class="task__name_input" placeholder="task name"/>
-                    
+
+                    <div class="task__name">{{ form.taskName.label_tag }}</div>
+
+                    {{form.taskName}}
+
                 </div>
 
 
 
                 <div class="below__container">
-                    
+
                     <!-- task date is here -->
-                    <div class="date__name">Date</div>
+                    <div class="date__name">{{ form.date.label_tag }}</div>
                     <div class="date__data">
-                        <input type="text" class="date__input" placeholder="DD/MM/YYYY" value="12/20/2020" />
+                        {{form.date}}
                         <div class="date__logo">
-                        
+
                         <img src="https://img.icons8.com/dotty/24/000000/calendar-16.png"/>
                         </div>
                     </div>
 
                     <!-- starting time here -->
-                    <div class="time__name">Starting Time</div>
+                    <div class="time__name">{{form.time.label_tag}}</div>
                     <div class="time__data">
-                        <input type="text" class="time__input" placeholder="HH:MM" value=06:30 />
+                        {{form.time}}
                         <div class="clock__icon">
-                        <Time/> 
+                        <Time/>
                         </div>
-                    </div> 
+                    </div>
 
 
                     <!-- add notes here -->
-                    <div class="add__notesa">Add Notes</div>
+                    <div class="add__notesa">{{form.notes.label_tag}}</div>
                     <div class="notes__dataa">
-                        <input type="text" class="notes__input" placeholder="Notes"  />
-                        
+                        {{form.notes}}
+
                         </div>
-                    </div> 
+                    </div>
 
 
 
@@ -149,16 +150,16 @@
                         <div class="cat__title">Category</div>
                         <div class="study">Study</div>
                         <div class="prod">Productive</div>
-                        <div class="life">Life</div>  
+                        <div class="life">Life</div>
                     </div>
-                    
+
 
                     <button class="button__add" type="submit" value="Submit">
                         <div class="plus__sign">+</div>
                         <div class="add__title">CREATE TASK</div>
                     </button>
 
-                    
+
 
                 </div>
 
