@@ -1,10 +1,11 @@
 body {
     padding: 0px;
     margin: 0px;
+    font-family: 'Dosis', sans-serif;
 }
 
 .main {
-    margin-top: 70px;
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -12,40 +13,98 @@ body {
 
 .task__bar {
     width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 700;
 }
+
+
+
+.task__bar_dashboard {
+    margin-bottom: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100%;
+    transition: 1s all ease-in-out;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+}
+
+.analytics {
+    margin-bottom: 40px;
+}
+
+.teams {
+    margin-bottom: 40px;
+}
+
+.documents {
+    margin-bottom: 40px;
+}
+
+.setting {
+    margin-bottom: 80px;
+}
+
+.analytics:hover,.teams:hover,.documents:hover,.setting:hover {
+/* 
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100%; */
+    cursor: pointer;
+    transition: 200ms all ease-in-out;
+}
+
+
+
+
+
 
 .main__task {
-    width: 40%;
+    width: 35%;
+    margin-left: 40px;
 }
 
+
+
 .profile__section {
-    width: 40%;
+    width: 45%;
 }
 
 
 .tasker__welcome {
     color: #9e9ea7;
-    font-size: 19px;
 }
 
 .task__specification {
     margin-top: 20px;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 800;
 }
 
 .task__insearch {
     margin-top: 25px;
-    font-size: 17px;
+    font-size: 15px;
     color: #9e9ea7;
     border: none;
     outline: none;
-    padding: 12px;
-    border-radius: 5px;
-    padding-right: 30%;
+    padding: 17px;
+    border-radius: 12px;
+    padding-right: 40%;
     background: #e7e7e9;
 }
-
 
 
 .my__tasks {
@@ -66,22 +125,70 @@ body {
     padding-right: 12px;
     margin-top: 12px;
     color: #8a8a91;
+    margin-bottom: 12px;
 }
 
 .ttask {
-    margin: 5px;
+    margin: 10px;
+}
+
+.ttask:hover {
+    color: #29A746;
+    cursor: pointer;
+}
+
+.recent__task {
+    color: rgb(255, 188, 5);
+}
+
+/* task list */
+
+.task__list {
+    overflow-y:scroll;
+    height: 370px;
+}
+
+div.task__list::-webkit-scrollbar {
+    background-color: rgba(19, 18, 18, 0.022);
+    width: 7px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-clip: content-box;
+    margin-bottom:310px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    max-height: 10px;
+    background-color: rgb(233, 190, 0);
 }
 
 
-/* task list */
+.user__profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.image__profile {
+    border-radius: 50%;
+    height: 8%;
+    width: 8%;
+    object-fit: fill;
+}
 
 .index__task, .index__task2 {
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
     padding: 10px;
     margin-top: 10px;
-    border-radius: 10px;
-    width: 70%;
-    padding-bottom: 80px;
+    border-radius: 20px;
+    width: 60%;
+    padding-bottom: 90px;
+    text-align: left;
+    padding-right: 80px;
 }
 
 .index__task2 {
@@ -102,13 +209,11 @@ body {
 
 .main_addtask__section {
     margin-top: 4%;
-
+    
 }
 
 .addtask__head {
-    font-family: Helvetica, Arial, sans-serif;
     font-size: 20px;
-    letter-spacing: 4px;
     font-weight: 700;
 }
 
@@ -145,3 +250,5 @@ body {
     color: white;
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
 }
+
+
