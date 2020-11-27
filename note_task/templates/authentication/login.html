@@ -8,8 +8,8 @@
     left: 0;
     width: 250px;
     height: 100%;
-     background-color: rgba(205, 27, 27, 0.1); 
-  
+     background-color: rgba(205, 27, 27, 0.1);
+
 
 }
 .sideright{
@@ -17,15 +17,15 @@
     right: 0;
     width: 250px;
     height: 100%;
-     background-color: rgba(205, 27, 27, 0.1);  
-   
+     background-color: rgba(205, 27, 27, 0.1);
+
 }
 .log {
     text-align: center;
     display: flex;
     flex-direction: column;
-    
-   
+
+
     justify-content:space-around;
     width:100%;
     margin: 10px;
@@ -39,12 +39,12 @@ button {
     border: none;
     cursor: pointer;
     text-align:center;
-    
+
 }
 button:hover {
     opacity: 0.8;
 }
-            
+
         </style>
 
     </head>
@@ -57,30 +57,21 @@ button:hover {
         </div>
         <div class="log">
             <h1>Login</h1>
-            <p>Don't have an account <span style="color:purple">Create an account</span></p>
-        <form>
+            <p>Don't have an account <a href = "{% url 'signup/' %}">Create an account</a></p>
+            {% if error %}
+            {{error}}
+            {% endif %}
+        <form method = 'post'>
+          {% csrf_token %}
             <div class="log">
                 <div class="name">
-                    <input type="text">
+                    <input type="text", name = 'username'>
                     <label>User Name</label>
                 </div>
                 <div class="pass">
-                    <input type="password">
+                    <input type="password", name = 'password'>
                     <label>Password</label>
                 </div>
-                <div class=mob>
-                    <input type="number">
-                    <label>Mobile NO.</label>
-                </div>
-                <div class="email">
-                    <input type="email">
-                    <label>Email</label>
-                </div>
-                <span class="check">
-                    <input type="checkbox"> <label>Remember Me</label>
-                    
-                </span>
-                <a href="#">Forget Password</a>
                 <div class="clear"></div>
                 <button type="submit">Login</button>
             </div>

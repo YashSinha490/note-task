@@ -74,8 +74,8 @@ input:hover {
 
 .sign__Up__button {
     position: absolute;
-    bottom: 70px;
-    left: 38%;
+    bottom: -50px;
+    left: 18%;
     background-color: #3f3d43;
     color: white;
     border: none;

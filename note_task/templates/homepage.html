@@ -24,7 +24,12 @@
 
         <!-- Main Task Panel -->
         <div class="main__task">
-            <div class="tasker__welcome"> Hello Jessica!</div>
+            <div class="tasker__welcome"> Hello {{request.user.username}}!</div>
+            <a href = "javascript:{document.getElementById('logout').submit()}" onclick="" > logout </a>
+            <form id = 'logout' class="" action="{% url 'logout/' %}" method="post">
+              {% csrf_token %}
+              <input type="hidden"/>
+            </form>
 
             <div class="task__specification">
                 Youve got <br/>
@@ -76,11 +81,11 @@
 
             <div class="project__time__tracker">
                <div class="text__time__tracker">
-                Project time tracker <br /> <span class="hhtt">you can start tracking</span> 
+                Project time tracker <br /> <span class="hhtt">you can start tracking</span>
                </div>
 
                     <img class="play__button__icon" src="https://img.icons8.com/metro/26/000000/play.png"/>
-                
+
             </div>
 
             <div class="calendar__events">
@@ -95,7 +100,7 @@
                 <div class="add_task__buttons" onclick="myfunc()"> + Add Task</div>
             </div>
 
-            
+
         </div>
 
 
@@ -210,10 +215,9 @@
             document.getElementById("ccnt").style.right = "-350px";
         }
 
-        document.querySelector(".button__add").addEventListener("click", 
+        document.querySelector(".button__add").addEventListener("click",
         function(e){
         })
     </script>
 </body>
 </html>
-
