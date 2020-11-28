@@ -10,6 +10,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
     <title>NotTask</title>
+    <style>
+        .settings__icon {
+            position: absolute;
+            right: 40%;
+            top: 30%;
+            cursor: pointer;
+        }
+        .setting__tab {
+            position: absolute;
+            right: 24%;
+            background-color:whitesmoke;
+            z-index: 90;
+            top: 75%;
+            border-radius: 15px;
+            box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+            height: 0px;
+            width: 200px;
+            text-align: center;
+            transition: 500ms all ease-in-out;
+        }
+
+        .text__onclick {
+            position: absolute;
+            color: black;
+            font-size: 22px;
+            background-color: #F6D9DD;
+            padding: 10px;
+            display: block;
+            padding-right: 50px;
+            padding-left: 50px;
+            border-radius: 15px;
+            box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+            right: 20px;
+            top: 10px;
+            text-decoration: none;
+            color: #D8596C;
+            display: none;
+            transition: 500ms all ease-out;
+        }
+
+        .text__onclick:hover {
+            color: gray;
+            background: transparent;
+            transition: 500ms all ease-out;
+        }
+    </style>
 </head>
 <body>
     <div class="main">
@@ -25,7 +71,7 @@
         <!-- Main Task Panel -->
         <div class="main__task">
             <div class="tasker__welcome"> Hello {{request.user.username}}!</div>
-            <a href = "javascript:{document.getElementById('logout').submit()}" onclick="" > logout </a>
+           
             <form id = 'logout' class="" action="{% url 'logout/' %}" method="post">
               {% csrf_token %}
               <input type="hidden"/>
@@ -75,6 +121,12 @@
                 <div class="user__detailss">
                     <div class="user__name">Deepak Singh</div>
                     <div class="user__designation">Programmer</div>
+                </div>
+                <div class="settings__icon" onclick="mysetting()">
+                    <img src="https://img.icons8.com/small/20/000000/gear.png"/>
+                </div>
+                <div class="setting__tab" id="sstab">
+                    <a href = "javascript:{document.getElementById('logout').submit()}" onclick="" class="text__onclick" id="ttxtt"> logout </a>
                 </div>
             </div>
 
@@ -207,6 +259,21 @@
 
 
     <script>
+
+        function mysetting() {
+            if(document.getElementById("sstab").style.height === "200px") {
+                
+            document.getElementById("sstab").style.height = "0px";
+            document.getElementById("sstab").style.top = "30%";
+            setTimeout(function() {document.getElementById("ttxtt").style.display = "none";}, 200);
+            }
+            else {
+                
+            document.getElementById("sstab").style.height = "200px";
+            document.getElementById("sstab").style.top = "75%";
+            setTimeout(function() {document.getElementById("ttxtt").style.display = "inline";}, 100);
+            }
+        }
         function myfunc() {
             document.getElementById("ccnt").style.right = "80px";
         }
