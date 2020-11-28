@@ -3,79 +3,150 @@
     <head>
         <title>login</title>
         <style>
-.sideleft{
-    position: fixed;
-    left: 0;
-    width: 250px;
-    height: 100%;
-     background-color: rgba(205, 27, 27, 0.1);
+            body {
+                background-color: #75747738;
+            }
+            .log{
+                background-color: #E8F0FE;
+                position: absolute;
+                width: 70%;
+                height: 80%;
+                left: 15%;
+                top: 80px;
+                box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+            }
 
+            .login__header {
+                position: absolute;
+                top: 30px;
+                color: #4d4d4d;
+                font-size: 35px;
+                font-weight: 800;
+                font-family: 'Cairo', sans-serif;
+                letter-spacing: 4px;
+                right: 43%;
+            }
 
-}
-.sideright{
-    position: fixed;
-    right: 0;
-    width: 250px;
-    height: 100%;
-     background-color: rgba(205, 27, 27, 0.1);
+            .fill__form {
+                position: absolute;
+                top: 30%;
+                display: flex;
+                flex-direction: column;
+                left: 37%;
+            }
+            
+            input {
+                border: none;
+                outline: none;
+                margin-bottom: 50px;
+                padding-bottom: 10px;
+                border-bottom: 2px double gray;
+                background-color: #E8F0FE ;
+                color: rgba(128, 128, 128, 0.678);
+                border-radius: 0;
+                font-size: 17px;
+                transition: 500ms all ease-out;
+            }
+            
+            input:hover {
+                border-bottom: 2px solid rgb(221, 169, 0);
+                margin-top: 4px;
+                margin-bottom: 46px;
+                transition: 500ms all ease-out;
+            }
+            
+            ::placeholder {
+                color: rgba(128, 128, 128, 0.534);
+                text-align: center;
+                font-size: 15px;
+            }
 
-}
-.log {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-
-
-    justify-content:space-around;
-    width:100%;
-    margin: 10px;
-
-}
-button {
-    background-color:#4CAF50;
-    color:white;
-    padding: 14px 20px;
-    margin: auto;
+            
+.sign__Up__button {
+    position: absolute;
+    bottom: -50px;
+    left: 18%;
+    background-color: #3f3d43;
+    background-color: 1px solid #3f3d43;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+    color: white;
     border: none;
+    outline: none;
+    padding: 10px;
+    padding-right: 70px;
+    padding-left: 70px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 5px;
+    transition: 500ms all ease-in;
+}
+
+.sign__Up__button:hover {
     cursor: pointer;
-    text-align:center;
-
+    background-color: transparent;
+    color: gray;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 2px solid gray;
+    font-weight: 600;
+    transition: 400ms all ease-in-out;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
 }
-button:hover {
-    opacity: 0.8;
+
+.sign__Up__button:checked {
+    box-shadow: none;
 }
 
+.sign__up__link {
+    position: absolute;
+    bottom:16%;
+    left: 40%;
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    background-color: #F6D9DD;
+    padding: 10px;
+    color: #D8596C;
+    border-radius: 10px;
+    border: 1px solid #D8596C;
+    transition: 500ms all ease-in;
+    box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+}
+
+a:hover {
+    background: transparent;
+    transition: 500ms all ease-in;
+    color: black;
+}
+
+            
         </style>
 
     </head>
     <body>
-        <div class="sideleft">
-
-        </div>
-        <div class="sideright">
-
-        </div>
         <div class="log">
-            <h1>Login</h1>
-            <p>Don't have an account <a href = "{% url 'signup/' %}">Create an account</a></p>
+            <h1 class="login__header">Login</h1>
+            <p class="sign__up__link">Don't have an account <a href = "{% url 'signup/' %}">Sign Up</a></p>
             {% if error %}
             {{error}}
             {% endif %}
-        <form method = 'post'>
-          {% csrf_token %}
-            <div class="log">
-                <div class="name">
-                    <input type="text", name = 'username'>
-                    <label>User Name</label>
-                </div>
-                <div class="pass">
-                    <input type="password", name = 'password'>
-                    <label>Password</label>
-                </div>
-                <div class="clear"></div>
-                <button type="submit">Login</button>
-            </div>
-        </form>
+            <form method = 'post' class=fill__form>
+                {% csrf_token %}
+                  <div class="login">
+                      <div class="name">
+                          <input type="text", name = 'username' placeholder="Username" size="35">
+                      </div>
+                      <div class="pass">
+                          <input type="password", name = 'password' placeholder="Password" size="35">
+                          
+                      </div>
+                      <div class="clear"></div>
+                      <button type="submit" class="sign__Up__button">Login</button>
+                  </div>
+              </form>
         </div>
     </body>
 </html>
