@@ -100,6 +100,7 @@
                 <div class="task__list">
 
               {% for task in tasks.all %}
+                {% if forloop.counter0|divisibleby:4 == 0 %}
                     <div class="index__task">
                         <h3 class="task__name"> {{task.taskName}} </h3>
                         <div class="task__description">{{task.date}}</div>
@@ -108,6 +109,34 @@
                         <button type="button" name="button">Remind Me</button>
                         <button type="button" name="button"><a href = "{% url 'delete_task' task.id %}">Delete</a></button>
                     </div>
+                {% elif forloop.counter0|divisibleby:4 == 1 %}
+                    <div class="index__task">
+                        <h3 class="task__name"> {{task.taskName}} </h3>
+                        <div class="task__description">{{task.date}}</div>
+                        {{task.time}} <br/>
+                        {{task.notes}}
+                        <button type="button" name="button">Remind Me</button>
+                        <button type="button" name="button"><a href = "{% url 'delete_task' task.id %}">Delete</a></button>
+                    </div>
+                {% elif forloop.counter0|divisibleby:4 == 2 %}
+                    <div class="index__task">
+                        <h3 class="task__name"> {{task.taskName}} </h3>
+                        <div class="task__description">{{task.date}}</div>
+                        {{task.time}} <br/>
+                        {{task.notes}}
+                        <button type="button" name="button">Remind Me</button>
+                        <button type="button" name="button"><a href = "{% url 'delete_task' task.id %}">Delete</a></button>
+                    </div>
+                {% elif forloop.counter0|divisibleby:4 == 3 %}
+                    <div class="index__task">
+                        <h3 class="task__name"> {{task.taskName}} </h3>
+                        <div class="task__description">{{task.date}}</div>
+                        {{task.time}} <br/>
+                        {{task.notes}}
+                        <button type="button" name="button">Remind Me</button>
+                        <button type="button" name="button"><a href = "{% url 'delete_task' task.id %}">Delete</a></button>
+                    </div>
+                {% endif %}
               {% endfor %}
                 </div>
             </div>

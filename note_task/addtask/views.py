@@ -4,6 +4,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from . import forms
 from .models import AddTask
 from django.contrib.auth.decorators import login_required
+from django import template
+
+register = template.Library()
 
 @login_required(login_url = 'login/')
 def homepage(request):
