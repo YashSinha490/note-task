@@ -71,7 +71,7 @@
         <!-- Main Task Panel -->
         <div class="main__task">
             <div class="tasker__welcome"> Hello {{request.user.username}}!</div>
-           
+
             <form id = 'logout' class="" action="{% url 'logout/' %}" method="post">
               {% csrf_token %}
               <input type="hidden"/>
@@ -79,7 +79,7 @@
 
             <div class="task__specification">
                 Youve got <br/>
-                <span> 9 </span>
+                <span> {{count}} </span>
                 tasks today
             </div>
 
@@ -106,6 +106,7 @@
                         {{task.time}} <br/>
                         {{task.notes}}
                         <button type="button" name="button">Remind Me</button>
+                        <button type="button" name="button"><a href = "{% url 'delete_task' task.id %}">Delete</a></button>
                     </div>
               {% endfor %}
                 </div>
@@ -184,7 +185,9 @@
 
 
                     <!-- task name is added here -->
-
+                    {% if error %}
+                      {{error}}
+                    {% endif %}
                     <div class="add__task">Add Task</div>
 
                     <div class="task__name">{{ form.taskName.label_tag }}</div>
@@ -262,13 +265,13 @@
 
         function mysetting() {
             if(document.getElementById("sstab").style.height === "200px") {
-                
+
             document.getElementById("sstab").style.height = "0px";
             document.getElementById("sstab").style.top = "30%";
             setTimeout(function() {document.getElementById("ttxtt").style.display = "none";}, 200);
             }
             else {
-                
+
             document.getElementById("sstab").style.height = "200px";
             document.getElementById("sstab").style.top = "75%";
             setTimeout(function() {document.getElementById("ttxtt").style.display = "inline";}, 100);
