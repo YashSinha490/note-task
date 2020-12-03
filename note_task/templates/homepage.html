@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/maa.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -55,6 +57,9 @@
             background: transparent;
             transition: 500ms all ease-out;
         }
+
+        .index__task {
+        }
     </style>
 </head>
 <body>
@@ -100,14 +105,22 @@
                 <div class="task__list">
 
               {% for task in tasks.all %}
-                    <div class="index__task">
+                    
+                    <div class="index__task" id="{{task.id}}">
+                    <div type="button" class="remove__task"><a href = "{% url 'delete_task' task.id %}" class="rem__task">
+                    <img src="https://img.icons8.com/color/28/000000/delete.png"/></a></div>
+                        <div id="no__dis" show-info="{{task.id}}">{{task.id}}</div>
+                        
                         <h3 class="task__name"> {{task.taskName}} </h3>
                         <div class="task__description">{{task.date}}</div>
                         {{task.time}} <br/>
                         {{task.notes}}
-                        <button type="button" name="button">Remind Me</button>
-                        <button type="button" name="button"><a href = "{% url 'delete_task' task.id %}">Delete</a></button>
+                        <div class="trem">
+                        <button type="button" name="button" class="toggle__remind">Remind Me</button>
+                        </div>
                     </div>
+
+                    
               {% endfor %}
                 </div>
             </div>
@@ -262,6 +275,33 @@
 
 
     <script>
+
+    for(let div of document.querySelectorAll('[show-info]')) {
+        var ccc = div.innerHTML;
+        
+
+        if(ccc%4 === 1) {
+            document.getElementById(ccc).style.backgroundColor = "#27272A";
+            document.getElementById(ccc).style.color = "#8E8E8C";
+        }
+        if(ccc%4 === 2) {
+            document.getElementById(ccc).style.backgroundColor = "#1E2E24";
+            document.getElementById(ccc).style.color = "#2FCB56";
+            
+        }
+        if(ccc%4 === 3) {
+            document.getElementById(ccc).style.backgroundColor = "#1A2635";
+            document.getElementById(ccc).style.color = "#147DFF";
+        }
+        if(ccc%4 === 0) {
+            document.getElementById(ccc).style.backgroundColor = "#1D1C3F";
+            document.getElementById(ccc).style.color = "#BF5AE7";
+        }
+
+
+    }
+                    
+        
 
         function mysetting() {
             if(document.getElementById("sstab").style.height === "200px") {
