@@ -88,9 +88,14 @@
                 tasks today
             </div>
 
-            <div class="task__search">
-                    <input class="task__insearch" type="text" placeholder="search something"/>
-            </div>
+
+            <!-- search bar -->
+
+            <form action = "{% url 'search' %}" method = "get" class = "task__search">
+              <input type = "text" placeholder="search your tasks here" name = "search" class = "task__insearch"/>
+              <button type = "submit">Search</button>
+            </form>
+            <a href="{% url '/homepage/' %}">back</a> <!-- display all -->
 
             <div class="my__tasks">
                 <div class="my__task__head">My Tasks</div>
@@ -105,12 +110,12 @@
                 <div class="task__list">
 
               {% for task in tasks.all %}
-                    
+
                     <div class="index__task" id="{{task.id}}">
                     <div type="button" class="remove__task"><a href = "{% url 'delete_task' task.id %}" class="rem__task">
                     <img src="https://img.icons8.com/color/28/000000/delete.png"/></a></div>
                         <div id="no__dis" show-info="{{task.id}}">{{task.id}}</div>
-                        
+
                         <h3 class="task__name"> {{task.taskName}} </h3>
                         <div class="task__description">{{task.date}}</div>
                         {{task.time}} <br/>
@@ -120,7 +125,7 @@
                         </div>
                     </div>
 
-                    
+
               {% endfor %}
                 </div>
             </div>
@@ -278,7 +283,7 @@
 
     for(let div of document.querySelectorAll('[show-info]')) {
         var ccc = div.innerHTML;
-        
+
 
         if(ccc%4 === 1) {
             document.getElementById(ccc).style.backgroundColor = "#27272A";
@@ -287,7 +292,7 @@
         if(ccc%4 === 2) {
             document.getElementById(ccc).style.backgroundColor = "#1E2E24";
             document.getElementById(ccc).style.color = "#2FCB56";
-            
+
         }
         if(ccc%4 === 3) {
             document.getElementById(ccc).style.backgroundColor = "#1A2635";
@@ -300,8 +305,8 @@
 
 
     }
-                    
-        
+
+
 
         function mysetting() {
             if(document.getElementById("sstab").style.height === "200px") {

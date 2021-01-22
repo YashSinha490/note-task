@@ -10,6 +10,7 @@ class AddTask(models.Model):
     time = models.TimeField(default = datetime.now().strftime('%H:%M:%S'), blank=True)
     notes = models.CharField(max_length = 500, blank = True, null = True)
     user = models.ForeignKey(User, default = None, on_delete = models.CASCADE)
+    slug = models.SlugField(max_length = 250, null = True)
 
     def __str__(self):
         return self.taskName
