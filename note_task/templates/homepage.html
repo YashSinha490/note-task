@@ -52,13 +52,38 @@
             transition: 500ms all ease-out;
         }
 
+        .ssu {
+            background: none;
+            opacity: 0.5;
+            position: absolute;
+            top: 178px;
+            left: 46%;
+            cursor: pointer;
+        }
+
         .text__onclick:hover {
             color: gray;
             background: transparent;
             transition: 500ms all ease-out;
         }
 
-        .index__task {
+        .aabout {
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .baack {
+            position: absolute;
+            left: 22%;
+            top: 180px;
+            opacity: 0.6;
+        }
+
+        .task__insearch {
+            padding-left: 40px;
+            padding-right:0%;
+            width: 69%;
         }
     </style>
 </head>
@@ -70,7 +95,9 @@
             <div class="analytics">Analytics</div>
             <div class="teams">Team</div>
             <div class="documents">Document</div>
-            <div class="setting">Setting</div>
+            <div class="setting">
+                <a class="aabout" href="{% url 'about/' %}">About</a>
+            </div>
         </div>
 
         <!-- Main Task Panel -->
@@ -92,10 +119,14 @@
             <!-- search bar -->
 
             <form action = "{% url 'search' %}" method = "get" class = "task__search">
-              <input type = "text" placeholder="search your tasks here" name = "search" class = "task__insearch"/>
-              <button type = "submit">Search</button>
+              <input type = "text" name = "search" class = "task__insearch"/>
+              <button type = "submit" class="ssu">
+                <img src="https://img.icons8.com/material-two-tone/24/000000/search.png"/>
+              </button>
             </form>
-            <a href="{% url '/homepage/' %}">back</a> <!-- display all -->
+            <a href="{% url '/homepage/' %}" class="baack">
+                <img src="https://img.icons8.com/ios/24/000000/back--v1.png"/>
+            </a> <!-- display all -->
 
             <div class="my__tasks">
                 <div class="my__task__head">My Tasks</div>
@@ -130,13 +161,14 @@
                 </div>
             </div>
         </div>
-<!-- about --> <a href="{% url 'about/' %}">about</a>
+<!-- about --> 
         <!-- Profile Section -->
         <div class="profile__section">
             <div class="user__profile">
                 <div class="user__Image">
                     <img class="image__profile" src="https://instagram.fknu1-1.fna.fbcdn.net/v/t51.2885-19/s320x320/49858772_370951917023136_3559444689042014208_n.jpg?_nc_ht=instagram.fknu1-1.fna.fbcdn.net&_nc_ohc=zNW3iQFOvO4AX98zesa&tp=1&oh=a50c3ace215e958290400b3d98e7900f&oe=5FE78804"/>
                 </div>
+
                 <div class="user__detailss">
                     <div class="user__name">Deepak Singh</div>
                     <div class="user__designation">Programmer</div>
