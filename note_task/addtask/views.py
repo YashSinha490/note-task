@@ -54,3 +54,6 @@ def search(request):
         search = request.GET.get('search')
         alltasks = AddTask.objects.all().filter(user = request.user, taskName = search)
         return render(request, 'homepage.html', {'tasks' : alltasks, 'form':form, 'count':count})
+
+def about(request):
+    return render(request, 'about.html')

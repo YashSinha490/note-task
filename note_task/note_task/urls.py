@@ -27,4 +27,5 @@ urlpatterns = [
     path('accounts/', include('authentication.urls')),
     path('<int:task_id>/', views.removeTask, name = 'delete_task'),
     path('search', views.search, name = 'search'),
+    path('about/', views.about, name = 'about/'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
