@@ -19,6 +19,7 @@ def remind(email):
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [email]
     send_mail(subject, message, email_from, recipient_list)
+    schedule.cancel_job(job)
 
 @login_required(login_url = 'login/')
 def homepage(request):
