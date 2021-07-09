@@ -6,8 +6,19 @@ from .models import AddTask
 from django.contrib.auth.decorators import login_required
 from django import template
 from django.db.models import Q
+from datetime import datetime
+import schedule
+from django.conf import settings
+from django.core.mail import send_mail
 
 register = template.Library()
+
+def remind(email):
+    subject = 'REMINDER!!!!!'
+    message = f'Hi, aren\'t you forgetting something?'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [email]
+    send_mail(subject, message, email_from, recipient_list)
 
 @login_required(login_url = 'login/')
 def homepage(request):
@@ -18,6 +29,19 @@ def homepage(request):
             instance = form.save(commit = False)
             instance.user = request.user
             instance.save()
+            form = forms.AddTaskForm(request.POST)
+            date=request.POST['date']
+            time=request.POST['time']
+            now = datetime.now()
+            later=datetime(int(date[:4]), int(date[5:7]), int(date[8:10]), int(time[:2]), int(time[3:5]), int(time[6:8]))
+            c=later-now
+            email=request.user.get_username()
+            minutes=c.total_seconds() / 60 + c.seconds / 60
+            print(minutes)
+            schedule.every(minutes).minutes.do(remind, email)
+            import time
+            while True:
+                schedule.run_pending()
             return redirect('/homepage/')
         else:
             alltasks = AddTask.objects.filter(user=request.user)
